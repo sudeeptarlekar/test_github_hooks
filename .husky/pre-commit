@@ -1,0 +1,8 @@
+#!/bin/bash
+check_dup_branch=`git branch -r | sed 's; origin/;;g' | tr '[:upper:]' '[:lower:]' | uniq -d`
+  if [ check_dup_branch ]
+  then
+    echo "Duplicate CaseInsensitive Branch Name Detected"
+    exit 1
+  fi
+exit 0
